@@ -1,7 +1,7 @@
 import './vendor.css';
 import './App.css';
 import Layout, { Content, Header } from 'antd/lib/layout/layout';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -23,6 +23,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Divider, Row, Form, Input, List } from 'antd';
 import Title from 'antd/lib/typography/Title';
 import setText from './features/workflow/action';
+import Paragraph from 'antd/lib/typography/Paragraph';
 
 library.add(faCheckSquare,
   faCoffee,
@@ -103,8 +104,7 @@ function Canvas(props: DefaultProps & { width: number }) {
       DrawerUtils.verticalBase(context, cols, cols, row, 600)
     }
   }, [props.workflows.text])
-  console.log("new width:", width)
-  return <canvas style={{width:"100%", height:"100%"}} ref={ref} width={width} height={width} />
+  return <canvas style={{width:"100%", height:"auto"}} ref={ref} width={width} height={width} />
 }
 
 class App extends React.Component<DefaultProps> {
@@ -127,7 +127,7 @@ class App extends React.Component<DefaultProps> {
             </span>
           Writer | <span className="thin">Write in Jigsaw Script</span></div></Header>
           <Content className="content" style={{marginTop: 100}}>
-            <Row>
+            <Row gutter={24}>
               <Col span={24} sm={12}>
                 <Title level={4}>Fill in your words!</Title>
                 <Divider />
@@ -139,9 +139,32 @@ class App extends React.Component<DefaultProps> {
                 </List.Item>} />
               </Col>
               <Col span={24} sm={12}>
+                <Title level={4}>Jigsaw Output</Title>
                 <Canvas {...this.props} width={(Math.max(600, words.length * DrawerUtils.GRAPH_HALF_WIDTH * 2.1))} />
               </Col>
             </Row>
+          </Content>
+          <Content className="content">
+            <Title level={4}>What is Jigsaw Script?</Title>
+            <Paragraph>
+              Jigsaw Script is a <a href="https://neographilia.wordpress.com/writing-systems/#logosyllabary">logosyllabary</a> script to write words in Jigsaw. Here are the basic rules:
+            </Paragraph>
+            <Paragraph>
+              <ol>
+                <li>Words are grouped into columns.</li>
+                <li>Writing order is from top to bottom, right to left.</li>
+                <li>Consonants are placed at the right side of the Jigsaw</li>
+                <li>Vowels are placed at the bottom side of the Jigsaw</li>
+              </ol>
+            </Paragraph>
+            <Divider />
+            <Title level={4}>What is Jigsaw Script for?</Title>
+            <Paragraph>
+              Jigsaw script is just mainly a hobby of mine, but from a linguistic perspective,
+              Jigsaw is very suitable for monosyllabic language with little-to-no amount of dipthongs, e.g. ae, ou, etc.
+            </Paragraph>
+            <Divider />
+            <Title level={4}>What are the letters?</Title>
           </Content>
         </Layout>
       </div>
