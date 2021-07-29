@@ -67,7 +67,7 @@ function Canvas(props: DefaultProps & { width: number }) {
     const cols = words.length
     for(let col = 0; col < cols; col++) {
       const syllables = words[col]
-      DrawerUtils.horizontalBase(context, col + 1, cols, 0, 600)
+      if (syllables.length) DrawerUtils.horizontalBase(context, col + 1, cols, 0, 600)
       for(let row = 0; row < syllables.length; row++) {
         const syllable = syllables[row]
         const consonant = syllable.slice(0, 1)
