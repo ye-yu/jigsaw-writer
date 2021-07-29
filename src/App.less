@@ -1,0 +1,55 @@
+.ant-layout-header {
+  .centered {
+    margin: auto;
+    width: max-content;
+  }
+
+  .big {
+    font-size: large;
+  }
+
+  .brand {
+    font-weight: bold;
+    padding: 0 5px;
+
+    &>*{
+      padding-right: 0.5px;
+    }
+  }
+}
+
+.thin {
+  font-weight: lighter;
+  font-size: 0.9rem;
+}
+
+.content {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: white;
+  min-height: calc(100vh - 64px - 30px - 30px);
+}
+
+.content > .ant-row > * {
+	padding: 20px;
+}
+
+
+.beans {
+  display: flex;
+  justify-content: flex-start;
+  &>* {
+    background: #f7c756;
+    padding: 2px 9px;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    margin-right: 8px;
+
+    &.error {
+      background: #e87e7e;
+    }
+  }
+}
