@@ -1,7 +1,7 @@
 import './vendor.css';
 import './App.css';
 import Layout, { Content, Header } from 'antd/lib/layout/layout';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -54,8 +54,9 @@ function FormDetails(props: DefaultProps) {
   </Form>
 }
 
-function Canvas(props: DefaultProps) {
+function Canvas(props: DefaultProps & { width: number }) {
   const ref = useRef<HTMLCanvasElement>(null)
+  const width = props.width
   useEffect(() => {
     if (!ref || !ref.current) return;
     const context = ref.current.getContext("2d")
@@ -63,7 +64,6 @@ function Canvas(props: DefaultProps) {
     context.clearRect(0, 0, 600, 600)
     context.strokeStyle = "#111120"
     const words = CommonUtils.syllableSplitter(props.workflows.text)
-
     const cols = words.length
     for(let col = 0; col < cols; col++) {
       const syllables = words[col]
@@ -103,7 +103,8 @@ function Canvas(props: DefaultProps) {
       DrawerUtils.verticalBase(context, cols, cols, row, 600)
     }
   }, [props.workflows.text])
-  return <canvas style={{width:"100%", height:"100%"}} ref={ref} width="600" height="600" />
+  console.log("new width:", width)
+  return <canvas style={{width:"100%", height:"100%"}} ref={ref} width={width} height={width} />
 }
 
 class App extends React.Component<DefaultProps> {
@@ -115,7 +116,7 @@ class App extends React.Component<DefaultProps> {
     return (
       <div className="App">
         <Layout style={{ height: "100%" }}>
-          <Header><div className="big centered"><FontAwesomeIcon icon="puzzle-piece" width={20} />
+          <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}><div className="big centered"><FontAwesomeIcon icon="puzzle-piece" width={20} />
             <span className="brand">
               <span className="red">J</span>
               <span className="orange">i</span>
@@ -125,9 +126,9 @@ class App extends React.Component<DefaultProps> {
               <span className="purple">w</span>
             </span>
           Writer | <span className="thin">Write in Jigsaw Script</span></div></Header>
-          <Content className={"content"}>
+          <Content className="content" style={{marginTop: 100}}>
             <Row>
-              <Col span={12}>
+              <Col span={24} sm={12}>
                 <Title level={4}>Fill in your words!</Title>
                 <Divider />
                 <FormDetails {...this.props} />
@@ -137,8 +138,8 @@ class App extends React.Component<DefaultProps> {
                   {item.map((e, i) => <span className={e.endsWith("!") && !e.endsWith("e!") ? "error" : ""} key={i}>{e}</span>)}
                 </List.Item>} />
               </Col>
-              <Col span={12}>
-                <Canvas {...this.props} />
+              <Col span={24} sm={12}>
+                <Canvas {...this.props} width={(Math.max(600, words.length * DrawerUtils.GRAPH_HALF_WIDTH * 2.1))} />
               </Col>
             </Row>
           </Content>
