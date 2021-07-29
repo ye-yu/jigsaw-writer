@@ -49,5 +49,5 @@
     "less": "^4.1.1",
     "less-watch-compiler": "^1.16.2"
   },
-  "homepage": "build"
+  "homepage": "jigsaw-writer"
 }
