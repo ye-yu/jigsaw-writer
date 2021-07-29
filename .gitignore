@@ -22,3 +22,5 @@ yarn-error.log*
 src/**/*.map
 App.css
 vendor.css
+
+/build
