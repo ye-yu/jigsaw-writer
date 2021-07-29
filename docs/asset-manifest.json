@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/jigsaw-writer/static/css/main.d5e92b8a.chunk.css",
-    "main.js": "/jigsaw-writer/static/js/main.a9d79982.chunk.js",
-    "main.js.map": "/jigsaw-writer/static/js/main.a9d79982.chunk.js.map",
+    "main.css": "/jigsaw-writer/static/css/main.01cacb92.chunk.css",
+    "main.js": "/jigsaw-writer/static/js/main.22815475.chunk.js",
+    "main.js.map": "/jigsaw-writer/static/js/main.22815475.chunk.js.map",
     "runtime-main.js": "/jigsaw-writer/static/js/runtime-main.810f25c5.js",
     "runtime-main.js.map": "/jigsaw-writer/static/js/runtime-main.810f25c5.js.map",
-    "static/js/2.56766101.chunk.js": "/jigsaw-writer/static/js/2.56766101.chunk.js",
-    "static/js/2.56766101.chunk.js.map": "/jigsaw-writer/static/js/2.56766101.chunk.js.map",
+    "static/js/2.1f17e3eb.chunk.js": "/jigsaw-writer/static/js/2.1f17e3eb.chunk.js",
+    "static/js/2.1f17e3eb.chunk.js.map": "/jigsaw-writer/static/js/2.1f17e3eb.chunk.js.map",
     "index.html": "/jigsaw-writer/index.html",
-    "static/css/main.d5e92b8a.chunk.css.map": "/jigsaw-writer/static/css/main.d5e92b8a.chunk.css.map",
-    "static/js/2.56766101.chunk.js.LICENSE.txt": "/jigsaw-writer/static/js/2.56766101.chunk.js.LICENSE.txt"
+    "static/css/main.01cacb92.chunk.css.map": "/jigsaw-writer/static/css/main.01cacb92.chunk.css.map",
+    "static/js/2.1f17e3eb.chunk.js.LICENSE.txt": "/jigsaw-writer/static/js/2.1f17e3eb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.810f25c5.js",
-    "static/js/2.56766101.chunk.js",
-    "static/css/main.d5e92b8a.chunk.css",
-    "static/js/main.a9d79982.chunk.js"
+    "static/js/2.1f17e3eb.chunk.js",
+    "static/css/main.01cacb92.chunk.css",
+    "static/js/main.22815475.chunk.js"
   ]
 }
