@@ -158,8 +158,8 @@ class App extends React.Component<DefaultProps> {
                 <Title level={4}>Fill in your words!</Title>
                 <FormDetails {...this.props} />
                 <Title level={4}>Your syllables:</Title>
-                <List style={{marginBottom:20}} bordered dataSource={words} renderItem={item => <List.Item className="beans">
-                  {item.map((e, i) => <span className={e.endsWith("!") && !e.endsWith("e!") ? "error" : ""} key={i}>{e}</span>)}
+                <List style={{ marginBottom: 20 }} bordered dataSource={words} renderItem={item => <List.Item className="beans">
+                  {item.map((e, i) => <span className={e.endsWith("!") && !e.endsWith("e!") ? "error" : ""} key={i}>{e.length === 1 ? (e + "-"): e}</span>)}
                 </List.Item>} />
               </Col>
               <Col span={24} sm={12}>
@@ -169,7 +169,7 @@ class App extends React.Component<DefaultProps> {
             </Row>
           </Content>
           <Content className="content">
-            <div id="how-to-use" style={{transform:"translateY(-100px)"}} />
+            <div id="how-to-use" style={{ transform: "translateY(-100px)" }} />
             <Title level={4}>How to use?</Title>
             <Paragraph>
               You can generally skip this and just type whatever letter you want, but since Jigsaw is especially for monosyllabic words, you can optionally transform your words into monosyllabic words:
@@ -178,10 +178,11 @@ class App extends React.Component<DefaultProps> {
               <ol>
                 <li>Remove any symbols like !@#$% from the sentence.</li>
                 <li>Replace any letter 'v' to letter 'b' because there is no letter for it yet.</li>
+                <li>Replace any letter 'ng' to letter just 'n' because there is no letter for it yet.</li>
                 <li>
                   Breakdown dipthongs by filling in 'y' or 'w':
                   <ol>
-                  <li>For 'u-' (like 'ua' or 'ui'), insert the letter 'w'.</li>
+                    <li>For 'u-' (like 'ua' or 'ui'), insert the letter 'w'.</li>
                     <li>For 'o-' (like 'oa' or 'oi'), insert the letter 'w'.</li>
                     <li>For 'ao', 'au', 'eo', and 'eu', insert the letter 'w'.</li>
                     <li>For 'e-' (like 'ea' or 'ei'), insert the letter 'y'.</li>
@@ -196,7 +197,7 @@ class App extends React.Component<DefaultProps> {
               Here is an example of transformations of English words:
             </Paragraph>
             <List
-              style={{marginBottom:10}}
+              style={{ marginBottom: 10 }}
               bordered
               dataSource={[
                 "bear -> beyer",
@@ -209,6 +210,9 @@ class App extends React.Component<DefaultProps> {
             <Paragraph>
               Obviously, English is not suitable for Jigsaw because it is not a monosyllabic language.
               Therefore, a lot of compensations have to be done to make it compatible with the Jigsaw script.
+            </Paragraph>
+            <Paragraph>
+              Check out other compensation for different languages <a href="#compensation">below</a>.
             </Paragraph>
             <Paragraph>
               <ol>
@@ -235,6 +239,7 @@ class App extends React.Component<DefaultProps> {
             </Paragraph>
             <Divider />
             <Title level={4}>What are the letters?</Title>
+            Header note: the 'r' in 'roti' is rhottal. 'p' and 't' are not aspirated.
             <List
               bordered
               dataSource={[
@@ -265,15 +270,62 @@ class App extends React.Component<DefaultProps> {
                 <Row className="bordered-cols" gutter={12}>
                   <Col span={24} sm={12} md={8}><div><div>a (aah)</div><StaticCanvas {...this.props} draw="a" offset={1} /></div></Col>
                   <Col span={24} sm={12} md={8}><div><div>o (oh)</div><StaticCanvas {...this.props} draw="o" offset={1} /></div></Col>
-                  <Col span={24} sm={12} md={8}><div><div>e (<span style={{transform:"rotate(180deg) translate(-10%,-21%)", display:"inline-block"}}>e</span>)</div><StaticCanvas {...this.props} draw="e" offset={1} /></div></Col>
+                  <Col span={24} sm={12} md={8}><div><div>e (<span style={{ transform: "rotate(180deg) translate(-10%,-21%)", display: "inline-block" }}>e</span>)</div><StaticCanvas {...this.props} draw="e" offset={1} /></div></Col>
                   <Col span={24} sm={12} md={8}><div><div>u (uwu)</div><StaticCanvas {...this.props} draw="u" offset={1} /></div></Col>
                   <Col span={24} sm={12} md={8}><div><div>e! (eh)</div><StaticCanvas {...this.props} draw="e!" offset={1} /></div></Col>
-                  <Col span={24} sm={12} md={8}><div><div>i</div><StaticCanvas {...this.props} draw="i" offset={1} /></div></Col>
+                  <Col span={24} sm={12} md={8}><div><div>i (iii)</div><StaticCanvas {...this.props} draw="i" offset={1} /></div></Col>
                   <Col span={24}><div><div>(silent/schwa)</div><StaticCanvas {...this.props} draw="silent" offset={1} /></div></Col>
                 </Row>,
               ]}
               renderItem={i => <List.Item>{i}</List.Item>}
             />
+            <Divider />
+            <div id="compensation" style={{ transform: "translateY(-100px)" }} />
+            <Title level={4}>Hawaiian Language</Title>
+            <Paragraph>
+              Hawaiian is a monosyllabic language, and the glottal letter in Jigsaw is a great feature to use in Hawaiian
+              However, the lack of dipthongs in Jigsaw makes it slightly harder to use.
+              Luckily, the workaround breaking down dipthongs using 'y' and 'w' is usually sufficient to compensate for the lack of dipthongs in Jigsaw.
+            </Paragraph>
+            <Paragraph>
+              Here are a few examples:
+            </Paragraph>
+            <List
+              style={{ marginBottom: 10 }}
+              bordered
+              dataSource={[
+                "Aloha -> Aloha",
+                "Aloha Kakahiaka -> Aloha Kakahiyaka",
+                "Kokua -> Kokuwa",
+                "Keiki -> Ke!yiki",
+                "Aloha ʻoe -> Aloha Owe"
+              ]}
+              renderItem={i => <List.Item>{i}</List.Item>}
+            />
+            <div className="footnote">Examples are taken from <a href="https://www.hawaii.com/discover/learn-to-speak-hawaiian/">Learn to Speak Hawaiian | Hawaii.com</a></div>
+            <Divider />
+            <Title level={4}>Malay/Indonesian Language</Title>
+            <Paragraph>
+              Another language is the almost monosyllabic is Malay/Indonesian language.
+              The first compensation to do is that the final consonant 'ng' is replaced with the letter R (double pointy left).
+              This is because this language originally has no rolled R in the consonants and Jigsaw is lacking the final consonant 'ng' for this language.
+            </Paragraph>
+            <Paragraph>
+              On the other hand, consonant clusters are broken down into their own syllables using the schwa. Below are the examples:
+            </Paragraph>
+            <List
+              style={{ marginBottom: 10 }}
+              bordered
+              dataSource={[
+                "Sayang -> SayaR",
+                "Kerajaan -> Keraja?an",
+                "Strategi -> S-t-rategi",
+                "Simpan -> Sim-pan-",
+                "Keluarga -> Keluwar-ga"
+              ]}
+              renderItem={i => <List.Item>{i}</List.Item>}
+            />
+
           </Content>
         </Layout>
       </div>

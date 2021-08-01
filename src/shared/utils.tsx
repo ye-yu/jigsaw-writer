@@ -14,7 +14,7 @@ export default class CommonUtils {
   .split(' ')
   .map(e => e
     .split(splitRegex)
-    .filter(e => e.length)
+    .filter(e => e.length && e !== "-")
     .reduce((a, b, i, arr) => {
       const vowelsOnly = new Set(["a", "e", "i", "o", "u"])
       if (b === "!") return a;
