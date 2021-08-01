@@ -182,12 +182,12 @@ class App extends React.Component<DefaultProps> {
                 <li>
                   Breakdown dipthongs by filling in 'y' or 'w':
                   <ol>
-                    <li>For 'u-' (like 'ua' or 'ui'), insert the letter 'w'.</li>
-                    <li>For 'o-' (like 'oa' or 'oi'), insert the letter 'w'.</li>
-                    <li>For 'ao', 'au', 'eo', and 'eu', insert the letter 'w'.</li>
-                    <li>For 'e-' (like 'ea' or 'ei'), insert the letter 'y'.</li>
-                    <li>For 'e-' (like 'ea' or 'ei'), insert the letter 'y'.</li>
-                    <li>For 'ai', 'ae', 'ei', and 'ee', insert the letter 'y'.</li>
+                    <li>For 'u-' (like 'ua' or 'ui'), insert the letter 'w', e.g. uwa.</li>
+                    <li>For 'o-' (like 'oa' or 'oi'), insert the letter 'w', e.g. owa.</li>
+                    <li>For 'ao', 'au', 'eo', and 'eu', insert the letter 'w', e.g. awo</li>
+                    <li>For 'e-' (like 'ea' or 'ei'), insert the letter 'y', e.g eya</li>
+                    <li>For 'i-' (like 'ia' or 'io'), insert the letter 'y', e.g. iya.</li>
+                    <li>For 'ai', 'ae', 'ei', and 'ee', insert the letter 'y', e.g. ayi.</li>
                   </ol>
                 </li>
                 <li>
@@ -204,8 +204,8 @@ class App extends React.Component<DefaultProps> {
               bordered
               dataSource={[
                 {
-                  display: "bear -> beyer",
-                  onClick: () => this.props.dispatch(setText("beyer"))
+                  display: "bear -> beyeR",
+                  onClick: () => this.props.dispatch(setText("beyeR"))
                 },
                 {
                   display: "coca cola -> koka kola",
@@ -216,8 +216,16 @@ class App extends React.Component<DefaultProps> {
                   onClick: () => this.props.dispatch(setText("spageti"))
                 },
                 {
-                  display: "I like to drink -> ai layik tu drink",
-                  onClick: () => this.props.dispatch(setText("ai layik tu drink"))
+                  display: "I like to drink -> ai layik tu dRink",
+                  onClick: () => this.props.dispatch(setText("ai layik tu dRink"))
+                },
+                {
+                  display: "Butter -> bu?e",
+                  onClick: () => this.props.dispatch(setText("bu?e"))
+                },
+                {
+                  display: "Cafe -> cafe!",
+                  onClick: () => this.props.dispatch(setText("cafe!"))
                 },
               ]}
               renderItem={i => <a href="#top" onClick={i.onClick}><List.Item>{i.display}</List.Item></a>}
