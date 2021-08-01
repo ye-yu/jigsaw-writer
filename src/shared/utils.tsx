@@ -61,6 +61,7 @@ export type LetterToDrawerMap = {
   "u": DrawerFunction
   "e": DrawerFunction
   "i": DrawerFunction
+  "silent": DrawerFunction
   undefined: undefined
 }
 
@@ -99,6 +100,7 @@ export class DrawerUtils {
     "u": DrawerUtils.u,
     "e": DrawerUtils.e,
     "i": DrawerUtils.i,
+    "silent": DrawerUtils.silent,
     undefined: undefined,
   }
   static debugDraw(ctx: CanvasRenderingContext2D, width: number, height: number) {
@@ -696,5 +698,9 @@ export class DrawerUtils {
     ctx.lineTo(pointSecondMiddleX, pointSecondMiddleY)
     ctx.lineTo(pointEndX, pointEndY)
     ctx.stroke()
+  }
+
+  static silent(ctx: CanvasRenderingContext2D, col: number, cols: number, row: number, width: number) {
+    DrawerUtils.horizontalBase(ctx, col + 1, cols, row + 1, width)
   }
 }

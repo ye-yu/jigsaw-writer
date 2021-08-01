@@ -156,11 +156,9 @@ class App extends React.Component<DefaultProps> {
             <Row gutter={24}>
               <Col span={24} sm={12}>
                 <Title level={4}>Fill in your words!</Title>
-                <Divider />
                 <FormDetails {...this.props} />
-                <Divider />
                 <Title level={4}>Your syllables:</Title>
-                <List bordered dataSource={words} renderItem={item => <List.Item className="beans">
+                <List style={{marginBottom:20}} bordered dataSource={words} renderItem={item => <List.Item className="beans">
                   {item.map((e, i) => <span className={e.endsWith("!") && !e.endsWith("e!") ? "error" : ""} key={i}>{e}</span>)}
                 </List.Item>} />
               </Col>
@@ -196,35 +194,36 @@ class App extends React.Component<DefaultProps> {
               dataSource={[
                 <Title level={5}>Consonants</Title>,
                 <Row className="bordered-cols" gutter={12}>
-                  <Col span={24} sm={12} md={6}><div><div>b</div><StaticCanvas {...this.props} draw="b" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>g</div><StaticCanvas {...this.props} draw="g" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>m</div><StaticCanvas {...this.props} draw="m" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>f</div><StaticCanvas {...this.props} draw="f" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>p</div><StaticCanvas {...this.props} draw="p" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>k</div><StaticCanvas {...this.props} draw="k" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>j</div><StaticCanvas {...this.props} draw="j" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>r</div><StaticCanvas {...this.props} draw="r" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>d</div><StaticCanvas {...this.props} draw="d" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>h</div><StaticCanvas {...this.props} draw="h" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>n</div><StaticCanvas {...this.props} draw="n" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>l</div><StaticCanvas {...this.props} draw="l" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>t</div><StaticCanvas {...this.props} draw="t" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>?</div><StaticCanvas {...this.props} draw="?" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>c</div><StaticCanvas {...this.props} draw="c" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>R</div><StaticCanvas {...this.props} draw="R" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>s</div><StaticCanvas {...this.props} draw="s" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>z</div><StaticCanvas {...this.props} draw="z" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>w</div><StaticCanvas {...this.props} draw="w" /></div></Col>
-                  <Col span={24} sm={12} md={6}><div><div>y</div><StaticCanvas {...this.props} draw="y" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>b (ball)</div><StaticCanvas {...this.props} draw="b" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>g (goal)</div><StaticCanvas {...this.props} draw="g" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>m (mole)</div><StaticCanvas {...this.props} draw="m" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>f (fall)</div><StaticCanvas {...this.props} draw="f" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>p (pita)</div><StaticCanvas {...this.props} draw="p" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>k (kek)</div><StaticCanvas {...this.props} draw="k" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>j (john)</div><StaticCanvas {...this.props} draw="j" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>r (roti)</div><StaticCanvas {...this.props} draw="r" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>d (doll)</div><StaticCanvas {...this.props} draw="d" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>h (hole)</div><StaticCanvas {...this.props} draw="h" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>n (none)</div><StaticCanvas {...this.props} draw="n" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>l (lawn)</div><StaticCanvas {...this.props} draw="l" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>t (tile)</div><StaticCanvas {...this.props} draw="t" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>? (glottal)</div><StaticCanvas {...this.props} draw="?" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>c (chair)</div><StaticCanvas {...this.props} draw="c" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>R (roll)</div><StaticCanvas {...this.props} draw="R" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>s (say)</div><StaticCanvas {...this.props} draw="s" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>z (zig)</div><StaticCanvas {...this.props} draw="z" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>w (wig)</div><StaticCanvas {...this.props} draw="w" /></div></Col>
+                  <Col span={24} sm={12} md={6}><div><div>y (yot)</div><StaticCanvas {...this.props} draw="y" /></div></Col>
                 </Row>,
                 <Title level={5}>Vowels</Title>,
                 <Row className="bordered-cols" gutter={12}>
-                  <Col span={24} sm={12} md={8}><div><div>a</div><StaticCanvas {...this.props} draw="a" offset={1} /></div></Col>
-                  <Col span={24} sm={12} md={8}><div><div>o</div><StaticCanvas {...this.props} draw="o" offset={1} /></div></Col>
-                  <Col span={24} sm={12} md={8}><div><div>e</div><StaticCanvas {...this.props} draw="e" offset={1} /></div></Col>
-                  <Col span={24} sm={12} md={8}><div><div>u</div><StaticCanvas {...this.props} draw="u" offset={1} /></div></Col>
-                  <Col span={24} sm={12} md={8}><div><div>e!</div><StaticCanvas {...this.props} draw="e!" offset={1} /></div></Col>
+                  <Col span={24} sm={12} md={8}><div><div>a (aah)</div><StaticCanvas {...this.props} draw="a" offset={1} /></div></Col>
+                  <Col span={24} sm={12} md={8}><div><div>o (oh)</div><StaticCanvas {...this.props} draw="o" offset={1} /></div></Col>
+                  <Col span={24} sm={12} md={8}><div><div>e (<span style={{transform:"rotate(180deg) translate(-10%,-21%)", display:"inline-block"}}>e</span>)</div><StaticCanvas {...this.props} draw="e" offset={1} /></div></Col>
+                  <Col span={24} sm={12} md={8}><div><div>u (uwu)</div><StaticCanvas {...this.props} draw="u" offset={1} /></div></Col>
+                  <Col span={24} sm={12} md={8}><div><div>e! (eh)</div><StaticCanvas {...this.props} draw="e!" offset={1} /></div></Col>
                   <Col span={24} sm={12} md={8}><div><div>i</div><StaticCanvas {...this.props} draw="i" offset={1} /></div></Col>
+                  <Col span={24}><div><div>(silent/schwa)</div><StaticCanvas {...this.props} draw="silent" offset={1} /></div></Col>
                 </Row>,
               ]}
               renderItem={i => <List.Item>{i}</List.Item>}
