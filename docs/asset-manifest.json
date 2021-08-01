@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/jigsaw-writer/static/css/main.dbac16eb.chunk.css",
-    "main.js": "/jigsaw-writer/static/js/main.5ed9995d.chunk.js",
-    "main.js.map": "/jigsaw-writer/static/js/main.5ed9995d.chunk.js.map",
+    "main.js": "/jigsaw-writer/static/js/main.690009b5.chunk.js",
+    "main.js.map": "/jigsaw-writer/static/js/main.690009b5.chunk.js.map",
     "runtime-main.js": "/jigsaw-writer/static/js/runtime-main.810f25c5.js",
     "runtime-main.js.map": "/jigsaw-writer/static/js/runtime-main.810f25c5.js.map",
     "static/js/2.4ce41a24.chunk.js": "/jigsaw-writer/static/js/2.4ce41a24.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.810f25c5.js",
     "static/js/2.4ce41a24.chunk.js",
     "static/css/main.dbac16eb.chunk.css",
-    "static/js/main.5ed9995d.chunk.js"
+    "static/js/main.690009b5.chunk.js"
   ]
 }
