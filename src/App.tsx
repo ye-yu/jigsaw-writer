@@ -190,7 +190,10 @@ class App extends React.Component<DefaultProps> {
                     <li>For 'ai', 'ae', 'ei', and 'ee', insert the letter 'y'.</li>
                   </ol>
                 </li>
-                <li>For languages that do not spell words based on how they are pronounced (like English), you need to translate each syllables into their pronunciation accordingly. Refer to the letter list below.</li>
+                <li>
+                  For languages that do not spell words based on how they are pronounced (like English), you need to translate each syllables into their pronunciation accordingly.
+                  Refer to the <a href="#letter-list">letter list</a> below.
+                </li>
               </ol>
             </Paragraph>
             <Paragraph>
@@ -200,12 +203,24 @@ class App extends React.Component<DefaultProps> {
               style={{ marginBottom: 10 }}
               bordered
               dataSource={[
-                "bear -> beyer",
-                "coca cola -> koka kola",
-                "spaghetti -> spageti",
-                "I like to drink -> ai layik tu drink",
+                {
+                  display: "bear -> beyer",
+                  onClick: () => this.props.dispatch(setText("beyer"))
+                },
+                {
+                  display: "coca cola -> koka kola",
+                  onClick: () => this.props.dispatch(setText("koka kola"))
+                },
+                {
+                  display: "spaghetti -> spageti",
+                  onClick: () => this.props.dispatch(setText("spageti"))
+                },
+                {
+                  display: "I like to drink -> ai layik tu drink",
+                  onClick: () => this.props.dispatch(setText("ai layik tu drink"))
+                },
               ]}
-              renderItem={i => <List.Item>{i}</List.Item>}
+              renderItem={i => <a href="#top" onClick={i.onClick}><List.Item>{i.display}</List.Item></a>}
             />
             <Paragraph>
               Obviously, English is not suitable for Jigsaw because it is not a monosyllabic language.
@@ -237,6 +252,7 @@ class App extends React.Component<DefaultProps> {
               Jigsaw script is just mainly a hobby of mine, but from a linguistic perspective,
               Jigsaw is very suitable for monosyllabic language with little-to-no amount of dipthongs, e.g. ae, ou, etc.
             </Paragraph>
+            <div id="letter-list" style={{ transform: "translateY(-100px)" }} />
             <Divider />
             <Title level={4}>What are the letters?</Title>
             Header note: the 'r' in 'roti' is rhottal. 'p' and 't' are not aspirated.
@@ -294,13 +310,28 @@ class App extends React.Component<DefaultProps> {
               style={{ marginBottom: 10 }}
               bordered
               dataSource={[
-                "Aloha -> Aloha",
-                "Aloha Kakahiaka -> Aloha Kakahiyaka",
-                "Kokua -> Kokuwa",
-                "Keiki -> Ke!yiki",
-                "Aloha ʻoe -> Aloha Owe"
+                {
+                  display: "Aloha -> Aloha",
+                  onClick: () => this.props.dispatch(setText("Aloha"))
+                },
+                {
+                  display: "Aloha Kakahiaka -> Aloha Kakahiyaka",
+                  onClick: () => this.props.dispatch(setText("Aloha Kakahiyaka"))
+                },
+                {
+                  display: "Kokua -> Kokuwa",
+                  onClick: () => this.props.dispatch(setText("Kokuwa"))
+                },
+                {
+                  display: "Keiki -> Ke!yiki",
+                  onClick: () => this.props.dispatch(setText("Ke!yiki"))
+                },
+                {
+                  display: "Aloha ʻoe -> Aloha Owe",
+                  onClick: () => this.props.dispatch(setText("Aloha Owe"))
+                },
               ]}
-              renderItem={i => <List.Item>{i}</List.Item>}
+              renderItem={i => <a href="#top" onClick={i.onClick}><List.Item>{i.display}</List.Item></a>}
             />
             <div className="footnote">Examples are taken from <a href="https://www.hawaii.com/discover/learn-to-speak-hawaiian/">Learn to Speak Hawaiian | Hawaii.com</a></div>
             <Divider />
@@ -308,22 +339,41 @@ class App extends React.Component<DefaultProps> {
             <Paragraph>
               Another language is the almost monosyllabic is Malay/Indonesian language.
               The first compensation to do is that the final consonant 'ng' is replaced with the letter R (double pointy left).
-              This is because this language originally has no rolled R in the consonants and Jigsaw is lacking the final consonant 'ng' for this language.
+              This is because this language originally has no rolled R as their consonants and Jigsaw is lacking the final consonant 'ng' for this language.
             </Paragraph>
             <Paragraph>
-              On the other hand, consonant clusters are broken down into their own syllables using the schwa. Below are the examples:
+              Moreover, consonant clusters are broken down into their own syllables using the schwa. Below are the examples:
             </Paragraph>
             <List
               style={{ marginBottom: 10 }}
               bordered
               dataSource={[
-                "Sayang -> SayaR",
-                "Kerajaan -> Keraja?an",
-                "Strategi -> S-t-rategi",
-                "Simpan -> Sim-pan-",
-                "Keluarga -> Keluwar-ga"
+                {
+                  display: "Sayang -> SayaR",
+                  onClick: () => this.props.dispatch(setText("SayaR"))
+                },
+                {
+                  display: "Kerajaan -> Keraja?an",
+                  onClick: () => this.props.dispatch(setText("Keraja?an"))
+                },
+                {
+                  display: "Strategi -> S-t-rategi",
+                  onClick: () => this.props.dispatch(setText("S-t-rategi"))
+                },
+                {
+                  display: "Simpan -> Sim-pan-",
+                  onClick: () => this.props.dispatch(setText("Sim-pan-"))
+                },
+                {
+                  display: "Keluarga -> Keluwar-ga",
+                  onClick: () => this.props.dispatch(setText("Keluwar-ga"))
+                },
+                {
+                  display: "Saya mencintai kamu -> saya men-cin-ta?i kamu",
+                  onClick: () => this.props.dispatch(setText("saya men-cin-ta?i kamu"))
+                },
               ]}
-              renderItem={i => <List.Item>{i}</List.Item>}
+              renderItem={i => <a href="#top" onClick={i.onClick}><List.Item>{i.display}</List.Item></a>}
             />
 
           </Content>
