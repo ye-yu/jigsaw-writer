@@ -125,7 +125,7 @@ function StaticCanvas(props: DefaultProps & { width?: number, draw: keyof Letter
     context.clearRect(0, 0, width, width)
     context.strokeStyle = "#111120"
     drawUtil(context, 0, 1 + offset, 0, width)
-  }, [props.workflows.text, draw, width])
+  }, [props.workflows.text, draw, width, offset])
   return <canvas ref={ref} width={3 * width} height={2 * width} />
 }
 

@@ -572,7 +572,7 @@ export class DrawerUtils {
       startX,
       startY - DrawerUtils.GRAPH_STROKE_WIDTH / 2 - 1,
       DrawerUtils.GRAPH_CURVE_WIDTH,
-      DrawerUtils.GRAPH_STROKE_WIDTH + 1,
+      DrawerUtils.GRAPH_STROKE_WIDTH + 2,
     )
 
     const curveStartX = startX + 1
@@ -610,7 +610,7 @@ export class DrawerUtils {
       startX,
       startY - DrawerUtils.GRAPH_STROKE_WIDTH / 2 - 1,
       DrawerUtils.GRAPH_CURVE_WIDTH,
-      DrawerUtils.GRAPH_STROKE_WIDTH + 1,
+      DrawerUtils.GRAPH_STROKE_WIDTH + 2,
     )
 
     const curveHalfWidth = DrawerUtils.GRAPH_CURVE_WIDTH / 2
@@ -642,7 +642,7 @@ export class DrawerUtils {
       startX,
       startY - DrawerUtils.GRAPH_STROKE_WIDTH / 2 - 1,
       2 * curveWidth - 2,
-      DrawerUtils.GRAPH_STROKE_WIDTH + 1,
+      DrawerUtils.GRAPH_STROKE_WIDTH + 2,
     )
 
     function curve(upside: boolean, offset: number) {
@@ -679,7 +679,7 @@ export class DrawerUtils {
       startX,
       startY - DrawerUtils.GRAPH_STROKE_WIDTH / 2 - 1,
       2 * curveWidth - 2,
-      DrawerUtils.GRAPH_STROKE_WIDTH + 1,
+      DrawerUtils.GRAPH_STROKE_WIDTH + 2,
     )
     const pointStartX = startX
     const pointStartY = startY
