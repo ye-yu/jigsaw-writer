@@ -32,6 +32,38 @@ export type DefaultProps = {
   dispatch: (a: any) => void
 }
 
+export type DrawerFunction = (ctx: CanvasRenderingContext2D, col: number, cols: number, row: number, width: number) => void
+
+export type LetterToDrawerMap = {
+  "b": DrawerFunction
+  "g": DrawerFunction
+  "m": DrawerFunction
+  "f": DrawerFunction
+  "s": DrawerFunction
+  "p": DrawerFunction
+  "k": DrawerFunction
+  "j": DrawerFunction
+  "r": DrawerFunction
+  "z": DrawerFunction
+  "d": DrawerFunction
+  "h": DrawerFunction
+  "n": DrawerFunction
+  "l": DrawerFunction
+  "w": DrawerFunction
+  "t": DrawerFunction
+  "?": DrawerFunction
+  "c": DrawerFunction
+  "R": DrawerFunction
+  "y": DrawerFunction
+  "a": DrawerFunction
+  "o": DrawerFunction
+  "e!":DrawerFunction
+  "u": DrawerFunction
+  "e": DrawerFunction
+  "i": DrawerFunction
+  undefined: undefined
+}
+
 export class DrawerUtils {
   static readonly GRAPH_HALF_WIDTH = 48;
   static readonly GRAPH_HALF_HEIGHT = 35;
@@ -40,26 +72,26 @@ export class DrawerUtils {
   static readonly GRAPH_CURVE_WIDTH = 24;
   static readonly MARGIN_TOP = 12;
 
-  static readonly DRAWER: {[letter:string]:(ctx: CanvasRenderingContext2D, col: number, cols: number, row: number, width: number) => void} = {
+  static readonly DRAWER: LetterToDrawerMap = {
     "b": DrawerUtils.b,
     "g": DrawerUtils.g,
     "m": DrawerUtils.m,
     "f": DrawerUtils.f,
-    "s": DrawerUtils.s,
     "p": DrawerUtils.p,
     "k": DrawerUtils.k,
     "j": DrawerUtils.j,
     "r": DrawerUtils.r,
-    "z": DrawerUtils.z,
     "d": DrawerUtils.d,
     "h": DrawerUtils.h,
     "n": DrawerUtils.n,
     "l": DrawerUtils.l,
-    "w": DrawerUtils.w,
     "t": DrawerUtils.t,
     "?": DrawerUtils.glottal,
     "c": DrawerUtils.c,
     "R": DrawerUtils.R,
+    "s": DrawerUtils.s,
+    "z": DrawerUtils.z,
+    "w": DrawerUtils.w,
     "y": DrawerUtils.y,
     "a": DrawerUtils.a,
     "o": DrawerUtils.o,
@@ -67,6 +99,7 @@ export class DrawerUtils {
     "u": DrawerUtils.u,
     "e": DrawerUtils.e,
     "i": DrawerUtils.i,
+    undefined: undefined,
   }
   static debugDraw(ctx: CanvasRenderingContext2D, width: number, height: number) {
     DrawerUtils.horizontalBaseSpan(ctx, 5, 0, width)
