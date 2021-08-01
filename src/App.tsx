@@ -169,6 +169,52 @@ class App extends React.Component<DefaultProps> {
             </Row>
           </Content>
           <Content className="content">
+            <div id="how-to-use" style={{transform:"translateY(-100px)"}} />
+            <Title level={4}>How to use?</Title>
+            <Paragraph>
+              You can generally skip this and just type whatever letter you want, but since Jigsaw is especially for monosyllabic words, you can optionally transform your words into monosyllabic words:
+            </Paragraph>
+            <Paragraph>
+              <ol>
+                <li>Remove any symbols like !@#$% from the sentence.</li>
+                <li>Replace any letter 'v' to letter 'b' because there is no letter for it yet.</li>
+                <li>
+                  Breakdown dipthongs by filling in 'y' or 'w':
+                  <ol>
+                  <li>For 'u-' (like 'ua' or 'ui'), insert the letter 'w'.</li>
+                    <li>For 'o-' (like 'oa' or 'oi'), insert the letter 'w'.</li>
+                    <li>For 'ao', 'au', 'eo', and 'eu', insert the letter 'w'.</li>
+                    <li>For 'e-' (like 'ea' or 'ei'), insert the letter 'y'.</li>
+                    <li>For 'e-' (like 'ea' or 'ei'), insert the letter 'y'.</li>
+                    <li>For 'ai', 'ae', 'ei', and 'ee', insert the letter 'y'.</li>
+                  </ol>
+                </li>
+                <li>For languages that do not spell words based on how they are pronounced (like English), you need to translate each syllables into their pronunciation accordingly. Refer to the letter list below.</li>
+              </ol>
+            </Paragraph>
+            <Paragraph>
+              Here is an example of transformations of English words:
+            </Paragraph>
+            <List
+              style={{marginBottom:10}}
+              bordered
+              dataSource={[
+                "bear -> beyer",
+                "coca cola -> koka kola",
+                "spaghetti -> spageti",
+                "I like to drink -> ai layik tu drink",
+              ]}
+              renderItem={i => <List.Item>{i}</List.Item>}
+            />
+            <Paragraph>
+              Obviously, English is not suitable for Jigsaw because it is not a monosyllabic language.
+              Therefore, a lot of compensations have to be done to make it compatible with the Jigsaw script.
+            </Paragraph>
+            <Paragraph>
+              <ol>
+              </ol>
+            </Paragraph>
+            <Divider />
             <Title level={4}>What is Jigsaw Script?</Title>
             <Paragraph>
               Jigsaw Script is a <a href="https://neographilia.wordpress.com/writing-systems/#logosyllabary">logosyllabary</a> script to write words in Jigsaw. Here are the basic rules:
@@ -228,16 +274,6 @@ class App extends React.Component<DefaultProps> {
               ]}
               renderItem={i => <List.Item>{i}</List.Item>}
             />
-            <div id="how-to-use" />
-            <Divider />
-            <Title level={4}>How to use?</Title>
-            <Paragraph>
-              Before using this tool, you need to remove non-supported letters from the target sentence.
-            </Paragraph>
-            <Paragraph>
-              <ol>
-              </ol>
-            </Paragraph>
           </Content>
         </Layout>
       </div>
